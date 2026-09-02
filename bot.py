@@ -109,30 +109,31 @@ async def callbacks(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
   if action.startswith("recharge_"):
-        amount = action.split("_", 1)[1]
- prices = {
-    "10": "L 295.00",
-    "25": "L 737.50",
-    "50": "L 1,475.00",
-    "100": "L 2,950.00",
-}
+    amount = action.split("_", 1)[1]
 
-price = prices.get(amount, "Consultar")
+    prices = {
+        "10": "L 295.00",
+        "25": "L 737.50",
+        "50": "L 1,475.00",
+        "100": "L 2,950.00",
+    }
 
-await query.edit_message_text(
-    f"💳 *Paquete de {amount} créditos*\n\n"
-    f"💰 Precio: *{price}*\n\n"
-    "🏦 *TRANSFERENCIA BAC CREDOMATIC*\n"
-    "Titular: EMANUEL YOSMAR GODOY VELASQUEZ\n"
-    "Cuenta BAC: 753706081\n\n"
-    "💳 *PAYPAL*\n"
-    "paypal.me/Yossimarvelasquez\n\n"
-    "📸 Después de realizar el pago, envía tu comprobante a Soporte "
-    "para verificarlo y acreditar tus créditos.",
-    parse_mode=ParseMode.MARKDOWN,
-    reply_markup=main_menu(),
-)
-return
+    price = prices.get(amount, "Consultar")
+
+    await query.edit_message_text(
+        f"💳 *Paquete de {amount} créditos*\n\n"
+        f"💰 Precio: *{price}*\n\n"
+        "🏦 *TRANSFERENCIA BAC CREDOMATIC*\n"
+        "Titular: EMANUEL YOSMAR GODOY VELASQUEZ\n"
+        "Cuenta BAC: 753706081\n\n"
+        "💳 *PAYPAL*\n"
+        "paypal.me/Yossimarvelasquez\n\n"
+        "📸 Después de realizar el pago, envía tu comprobante a Soporte "
+        "para verificarlo y acreditar tus créditos.",
+        parse_mode=ParseMode.MARKDOWN,
+        reply_markup=main_menu(),
+    )
+    return
 
     if action == "support":
         await query.edit_message_text(
