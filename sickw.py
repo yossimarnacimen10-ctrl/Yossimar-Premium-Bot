@@ -85,14 +85,18 @@ def format_yossimar_report(data: dict) -> str:
                     normalized.append((key.strip().lower(), val.strip()))
 
     def find_value(aliases):
+    for alias in aliases:
         for key, value in normalized:
             last = re.split(r"[.\[\]]+", key)[-1]
-            if any(last == alias for alias in aliases):
+            if last == alias:
                 return value
+
+    for alias in aliases:
         for key, value in normalized:
-            if any(alias in key for alias in aliases):
+            if alias in key:
                 return value
-        return "No disponible"
+
+    return "No disponible"
 
     lines = ["⚡ *Check Apple Yossimar Premium*", ""]
     for label, aliases in FIELD_ALIASES:
