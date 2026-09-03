@@ -68,7 +68,7 @@ FIELD_ALIASES = [
     ("Dispositivo Demo", ["demo unit", "demo device", "demo"]),
     ("Dispositivo de Préstamo", ["loaner device", "loaner"]),
     ("Reemplazado por Apple", ["replaced device", "replacement", "replaced"]),
-    ("Operador", ["carrier", "network"]),
+    ("Operador", ["locked carrier", "carrier", "network", "sold to name"]),
     ("Simlock Status", ["sim-lock", "simlock", "sim lock"]),
     ("iCloud Lock", ["icloud lock", "find my iphone", "fmi", "find my"]),
     ("Blacklist", ["blacklist"]),
